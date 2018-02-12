@@ -28,10 +28,18 @@
         "access": "public"
     },
     "release": {
-        "publish": {
-            "path": "@semantic-release/npm",
-            "pkgRoot": "dist"
-        }
+        "publish": [
+            "@semantic-release/changelog",
+            {
+                "path": "@semantic-release/npm",
+                "pkgRoot": "dist"
+            },
+            {
+                "path": "@semantic-release/git",
+                "message": "chore(release): ${nextRelease.version}\n\n[skip ci]\n\n${nextRelease.notes}"
+            },
+            "@semantic-release/github"
+        ]
     },
     "devDependencies": {
         "@angular/cli": "1.6.8",

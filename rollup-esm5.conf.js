@@ -4,8 +4,9 @@ export default {
         file: 'dist/esm5/ngx-logger.js',
         format: 'es'
     },
-    external: ['@angular/core'],
+    external: ['@angular/core', '@dot-build/logger'],
     globals: {
+        '@dot-build/logger': 'logger',
         // Angular dependencies
         '@angular/animations': 'ng.animations',
         '@angular/core': 'ng.core',
